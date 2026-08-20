@@ -12,11 +12,12 @@
 4. [Functional Modules](#4-functional-modules)
 5. [API Reference](#5-api-reference)
 6. [Operation Guide](#6-operation-guide)
-7. [Output Artefacts and Interpretation](#7-output-artefacts-and-interpretation)
-8. [Validation and Accuracy](#8-validation-and-accuracy)
-9. [Troubleshooting](#9-troubleshooting)
-10. [Support and Version Information](#10-support-and-version-information)
-11. [Appendix](#11-appendix)
+7. [MixTriad Studio (Browser Tool)](#7-mixtriad-studio-browser-tool)
+8. [Output Artefacts and Interpretation](#8-output-artefacts-and-interpretation)
+9. [Validation and Accuracy](#9-validation-and-accuracy)
+10. [Troubleshooting](#10-troubleshooting)
+11. [Support and Version Information](#11-support-and-version-information)
+12. [Appendix](#12-appendix)
 
 ---
 
@@ -43,6 +44,7 @@ The package was developed for a study of the virality of AI-generated misinforma
 - **Publication-ready artefacts**: tidy CSV tables for every stage, four figures (importance, model comparison, and one configuration chart per outcome direction), and a consolidated `report.md`
 - **Built-in verification**: `mixtriad selfcheck` validates the installed copy against an exhaustive Quine–McCluskey oracle and calibration invariants in under a second
 - **Inter-coder reliability**: `krippendorff_alpha` for hand-coded ordinal antecedents
+- **Zero-install browser front end** — `mixtriad_studio.html`, a single file that runs the Stage-1 regression and the complete fsQCA stage locally in a browser with no Python, no installation, and no network access
 
 ### 1.3 Technical Architecture
 
@@ -60,14 +62,15 @@ The package was developed for a study of the virality of AI-generated misinforma
 | Integrity | `MANIFEST.sha256` covering every distributed file |
 | License | MIT |
 
-### 1.4 Two Ways to Run an Analysis
+### 1.4 Three Ways to Run an Analysis
 
 |  | Intended for | How to run |
 |---|---|---|
 | **CLI + YAML config** | Reproducible, declarative runs; users who prefer not to write Python | `mixtriad run config.yaml` |
 | **Python API** | Notebook exploration, custom stages, standalone fsQCA | `from mixtriad import Pipeline, Schema, FsqcaSpec` |
+| **`mixtriad_studio.html`** | Anyone; no programming required | Open the file in a browser — no install, no Python, no network (Section 7) |
 
-Both routes execute identical code paths and write identical artefacts. The YAML route is recommended for the analysis of record, because the config file *is* the complete, shareable description of the run.
+The CLI and API routes execute identical code paths and write identical artefacts; the YAML route is recommended for the analysis of record, because the config file *is* the complete, shareable description of the run. The browser tool ships alongside the package in the repository and is **not** distributed via pip; use the Python package when you need the tuned Stage-2 protocol, the negative-binomial robustness model, or scripted analysis across many files.
 
 ---
 
@@ -103,9 +106,9 @@ Both routes execute identical code paths and write identical artefacts. The YAML
 | `shap` | shap ≥ 0.42 | optional SHAP analyses in user code |
 | `all` | all three | recommended for the analysis of record |
 
-Without the optional extras the pipeline **does not fail**: Stage 2 transparently substitutes scikit-learn's `HistGradientBoostingRegressor` tuned by random search, and the model-comparison table labels the tuned model accordingly (see §8.3 on the practical equivalence of the two paths).
+Without the optional extras the pipeline **does not fail**: Stage 2 transparently substitutes scikit-learn's `HistGradientBoostingRegressor` tuned by random search, and the model-comparison table labels the tuned model accordingly (see §9.3 on the practical equivalence of the two paths).
 
-Running the test suite additionally requires `pytest` and `hypothesis`. Reproducing the cross-validation against R (§8.2) requires R ≥ 4.3 with the `QCA` package; nothing in normal operation needs R.
+Running the test suite additionally requires `pytest` and `hypothesis`. Reproducing the cross-validation against R (§9.2) requires R ≥ 4.3 with the `QCA` package; nothing in normal operation needs R.
 
 ### 2.2 Data Requirements
 
@@ -117,6 +120,16 @@ Running the test suite additionally requires `pytest` and `hypothesis`. Reproduc
 | Antecedents | numeric. **Categorical antecedents must be numerically coded** (integer codes); string columns raise an error in Stage 2 |
 | Missing data | rows with missing values in any model column are dropped listwise per stage |
 | Sample size | fsQCA convention: intermediate-N designs; the demo corpus has 388 cases |
+
+### 2.3 Browser Tool
+
+| Item | Requirement |
+|---|---|
+| Browser | any current Chrome, Firefox, Edge, or Safari |
+| Network | **Not required.** The page performs no network requests and works fully offline |
+| Installation | None. Open the local file directly |
+
+Because nothing is uploaded anywhere, the browser tool is safe to use with confidential data.
 
 ---
 
@@ -471,11 +484,43 @@ Report α per hand-coded antecedent before analysis; values ≥ 0.80 are convent
 
 ---
 
-## 7. Output Artefacts and Interpretation
+## 7. MixTriad Studio (Browser Tool)
+
+### 7.1 Opening the Tool
+
+No installation. Download `mixtriad_studio.html` from the repository root and double-click it, or open it from the browser's File menu. The page is a single self-contained file (~90 KB) with no external resources; it can be opened with the network disabled.
+
+### 7.2 The Five Tabs
+
+| Tab | Content |
+|---|---|
+| **Data & roles** | Load a CSV by file picker or drag-and-drop, or load the embedded 388-case demo corpus; assign each column a role (outcome / antecedent / control / ignore) plus log1p and categorical flags |
+| **1 · Regression** | OLS on `log1p(outcome)` with HC1 robust errors and dummy-coded categoricals, significance stars, R², and the VIF table |
+| **2 · Importance screen** | Five fixed 80/20 hold-outs, a gradient-boosting model against an OLS baseline, permutation importance with the elbow cut-off chart, and the retained condition set |
+| **3 · fsQCA** | Editable calibration anchors (percentile defaults, degeneracy warnings), directional expectations, the three truth-table cut-offs, necessity table, truth table, all three solution types, the configuration chart, and a Y / ~Y direction switch |
+| **Check & scope** | The parity statement relative to the Python package, a built-in oracle runnable on the spot, and the privacy note |
+
+Every table has a CSV download button; artefact filenames mirror the Python pipeline's (`stage3_truthtable_outcome.csv`, ...).
+
+### 7.3 Workflow
+
+Load data → assign roles → run the stages in order. Stage 3 pre-selects the conditions retained by the Stage-2 elbow (all antecedents if Stage 2 has not run) and always computes both outcome directions; conditions flagged with degenerate percentile anchors should be given theory-based anchors before interpreting the recipes. The left-rail dots fill in as stages complete — the same ●○ set-membership grammar used in the configuration chart.
+
+### 7.4 Accuracy Relative to the Python Package
+
+The Stage-3 engine is a **line-for-line port** of `mixtriad.fsqca` and is differential-tested against it: all 255 three-condition minterm sets minimise identically with and without logical remainders; calibration agrees to ≤ 3 × 10⁻¹⁶; and on the shipped demo corpus the truth tables, all three solution types, and the necessity tables are identical to the package's `demo_out` artefacts for both outcome directions. Stage 1 uses the same formulas (OLS on log1p, HC1, normal-based p-values, VIF) and agrees with statsmodels to ≤ 10⁻¹² on the demo. The **Check & scope** tab's built-in check replays a brute-force minimum-cover oracle and the calibration invariants inside the browser itself — the same idea as `mixtriad selfcheck` — and continuous integration additionally loads the shipped file headlessly on every commit and asserts the demo's pinned results (Section 9.4).
+
+### 7.5 When to Use the Python Package Instead
+
+The Stage-2 screen in the browser uses a **simplified fixed-hyperparameter boosting model** with its own train/test shuffle: on the demo corpus it retains the same four conditions as the package, but its metrics are not comparable run-for-run, and it does not implement Bayesian tuning. The browser tool also omits the negative-binomial robustness model, `krippendorff_alpha`, the Markdown report, and batch processing. Use the Python package for the analysis of record; use the studio for teaching, quick exploration, collaborators without a Python environment, and confidential data that must not leave a machine.
+
+---
+
+## 8. Output Artefacts and Interpretation
 
 A full `run_all` writes 24 files to `outdir`. Suffix `_outcome` refers to the analysis of `Y`; `_negated` to `~Y`.
 
-### 7.1 File Inventory
+### 8.1 File Inventory
 
 | File | Content |
 |---|---|
@@ -496,18 +541,18 @@ A full `run_all` writes 24 files to `outdir`. Suffix `_outcome` refers to the an
 | `fig_configurations_*.png` | Configuration chart: ● present, ○ absent; large = core, small = peripheral |
 | `report.md` | Consolidated Markdown report across all stages |
 
-### 7.2 Reading the Results
+### 8.2 Reading the Results
 
 - **Convergence is the point.** The triangulation logic: an antecedent that is significant in Stage 1, retained by the Stage 2 elbow, *and* appears as a core condition in Stage 3 is supported by three methodologically independent lenses. Divergence is equally informative — e.g. a variable with no net effect that appears in one configuration signals a conjunctural, not additive, role.
 - **Solution statistics.** Report the intermediate solution with its consistency and coverage (in `to_frame().attrs` and `report.md`); conventional floors are consistency ≥ 0.80 and PRI ≥ 0.70 (the defaults). `raw_coverage` is a recipe's empirical breadth; `unique_coverage` the share of the outcome only that recipe explains.
 - **Necessity before sufficiency.** A condition with necessity consistency ≥ 0.90 and non-trivial coverage should be discussed as a candidate necessary condition before the sufficiency analysis.
-- **Condition order.** Stage-3 columns and recipe literals follow the Stage-2 importance ranking. Two installations (with vs without the optional stack) can rank two near-tied conditions differently, changing display order while every statistic remains identical — see §9.4.
+- **Condition order.** Stage-3 columns and recipe literals follow the Stage-2 importance ranking. Two installations (with vs without the optional stack) can rank two near-tied conditions differently, changing display order while every statistic remains identical — see §10.4.
 
 ---
 
-## 8. Validation and Accuracy
+## 9. Validation and Accuracy
 
-### 8.1 Built-in Verification (`mixtriad selfcheck`)
+### 9.1 Built-in Verification (`mixtriad selfcheck`)
 
 Every installation carries its own oracle, runnable in under a second:
 
@@ -518,7 +563,7 @@ Every installation carries its own oracle, runnable in under a second:
 | Set-measure bounds | consistency/coverage/PRI ∈ [0, 1] on random data | 150 |
 | Micro end-to-end | Stage 1 + Stage 3 on a generated micro-dataset (`--full` adds Stage 2) | 1 |
 
-### 8.2 Cross-Validation Against R (`QCA` 3.25)
+### 9.2 Cross-Validation Against R (`QCA` 3.25)
 
 The reference implementation for fsQCA is R's `QCA` package. The shipped evidence (`verify/round9/`, produced under R 4.3.3, QCA 3.25, admisc 0.40) compares MixTriad on the demo corpus and on Lipset's classic dataset:
 
@@ -534,15 +579,15 @@ The reference implementation for fsQCA is R's `QCA` package. The shipped evidenc
 
 The comparison script (`verify/round9/crosscheck.R`) is shipped and re-runnable.
 
-### 8.3 The Stage-2 Fallback Is Substantively Equivalent
+### 9.3 The Stage-2 Fallback Is Substantively Equivalent
 
 With the optional stack absent, the tuned model is `HistGradientBoostingRegressor` under random search rather than Optuna-tuned XGBoost. On the demo corpus the two paths retain the **same** antecedent set with **identical** downstream fsQCA statistics; only near-tied importance ranks (hence display order) can differ. Absolute Stage-2 metrics differ modestly (demo: tuned RMSE 0.93 with XGBoost vs 1.01 with the fallback). For the analysis of record, install `".[all]"` and report which path ran — the `model` column of `stage2_model_comparison.csv` names it explicitly.
 
-### 8.4 Continuous Integration
+### 9.4 Continuous Integration
 
-Every commit runs: ruff lint; `sha256sum -c MANIFEST.sha256` (file-integrity gate); the pytest suite (35 tests, including Hypothesis property tests) plus `selfcheck` on Python 3.9, 3.10, 3.11, 3.12 and 3.13 with core dependencies and once on 3.12 with the full optional stack; and an end-to-end demo job that executes `mixtriad run` on the shipped corpus, asserts seven key artefacts are non-empty, and uploads the outputs as inspectable CI artefacts.
+Every commit runs: ruff lint; `sha256sum -c MANIFEST.sha256` (file-integrity gate); the pytest suite (35 tests, including Hypothesis property tests) plus `selfcheck` on Python 3.9, 3.10, 3.11, 3.12 and 3.13 with core dependencies and once on 3.12 with the full optional stack; an end-to-end demo job that executes `mixtriad run` on the shipped corpus, asserts seven key artefacts are non-empty, and uploads the outputs as inspectable CI artefacts; and a headless-browser job that loads `mixtriad_studio.html`, walks the demo through all three stages, and asserts the pinned demo results and the built-in oracle.
 
-### 8.5 Scope and Limitations
+### 9.5 Scope and Limitations
 
 - **Categorical antecedents** must be numerically coded; string columns raise in Stage 2. Stage 1 dummy-codes them; Stage 2 treats the codes as ordinal numeric — acceptable for tree models, but interpret importances of nominal variables with care.
 - **Nominal variables do not belong in fsQCA.** Percentile calibration of an unordered code is not meaningful. If a nominal antecedent survives the Stage-2 screen, exclude it from Stage 3 explicitly via `stage3_fsqca(spec, conditions=[...])`.
@@ -553,55 +598,55 @@ Every commit runs: ruff lint; `sha256sum -c MANIFEST.sha256` (file-integrity gat
 
 ---
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
-### 9.1 `ModuleNotFoundError: No module named 'tabulate'` at Report Time
+### 10.1 `ModuleNotFoundError: No module named 'tabulate'` at Report Time
 
 **Cause:** an installation predating v1.1.2, where `tabulate` (required by `DataFrame.to_markdown`) was not yet a declared dependency.
 
 **Fix:** upgrade to ≥ 1.1.2, or `pip install tabulate`.
 
-### 9.2 Stage 2 Raises `could not convert string to float`
+### 10.2 Stage 2 Raises `could not convert string to float`
 
 **Cause:** a categorical antecedent stored as text. Stage 2 requires numeric input.
 
-**Fix:** integer-code the column before loading (e.g. `df["topic"] = df["topic"].map({"news": 0, "sports": 1, "meme": 2})`), declare it in `Schema.categorical`, and keep it out of Stage 3 (§8.5).
+**Fix:** integer-code the column before loading (e.g. `df["topic"] = df["topic"].map({"news": 0, "sports": 1, "meme": 2})`), declare it in `Schema.categorical`, and keep it out of Stage 3 (§9.5).
 
-### 9.3 `stage3_anchors_*.json` Flags `degenerate_percentiles`
+### 10.3 `stage3_anchors_*.json` Flags `degenerate_percentiles`
 
 **Cause:** the condition's 10th/50th/90th percentiles are not distinct (sparse or discrete variable), so automatic anchors are unreliable; zero-mass cases sit at the crossover and are classified "present".
 
 **Fix:** supply theory-based anchors for that condition via `FsqcaSpec(anchors={...})` or the YAML `fsqca.anchors` block.
 
-### 9.4 Recipe or Column Order Differs Between Machines
+### 10.4 Recipe or Column Order Differs Between Machines
 
 **Expected** when one machine has the optional stack and the other uses the fallback: near-tied permutation importances can swap ranks, and Stage-3 output order follows that ranking. Verify that the *set* of retained conditions and every consistency/coverage value match — on the shipped demo they do, exactly.
 
-### 9.5 `make_dataset.py` Raises `FileNotFoundError`
+### 10.5 `make_dataset.py` Raises `FileNotFoundError`
 
 **Cause:** the script writes via a repository-relative path.
 
 **Fix:** run it from the repository root: `python examples/make_dataset.py`.
 
-### 9.6 `--trials 0` Is Silently Ignored
+### 10.6 `--trials 0` Is Silently Ignored
 
 **Cause:** the CLI treats 0 as unset and falls back to the config value.
 
 **Fix:** set `n_trials: 1` (or any positive value) in the YAML instead; a zero-trial run is never meaningful.
 
-### 9.7 The Count Model Is Not NB2
+### 10.7 The Count Model Is Not NB2
 
 **Cause:** NB2 IRLS did not converge on your data, so the ladder reported the Poisson QMLE with HC1 sandwich errors instead (§4.2).
 
 **Fix:** nothing is wrong — this is the documented robust alternative under overdispersion. The `model` column and the table's `attrs` metadata record the choice; report it as fitted.
 
-### 9.8 The Configuration Chart Is Missing or Empty
+### 10.8 The Configuration Chart Is Missing or Empty
 
 **Cause:** no configuration passed the consistency/PRI/frequency cut-offs for that outcome direction, so the solution is empty.
 
-**Fix:** inspect `stage3_truthtable_*.csv`. Consider whether the cut-offs are too strict for your N, whether calibration anchors are sensible (§9.3), or whether the outcome direction simply has no consistent recipe — itself a reportable finding.
+**Fix:** inspect `stage3_truthtable_*.csv`. Consider whether the cut-offs are too strict for your N, whether calibration anchors are sensible (§10.3), or whether the outcome direction simply has no consistent recipe — itself a reportable finding.
 
-### 9.9 `sha256sum -c MANIFEST.sha256` Fails After Editing Files
+### 10.9 `sha256sum -c MANIFEST.sha256` Fails After Editing Files
 
 **Cause:** the manifest pins every distributed file; any edit invalidates its entry.
 
@@ -613,48 +658,48 @@ find . -type f ! -path "./.git/*" ! -name MANIFEST.sha256 \
   | while read -r f; do sha256sum "$f"; done > MANIFEST.sha256
 ```
 
-### 9.10 `mixtriad selfcheck` Fails
+### 10.10 `mixtriad selfcheck` Fails
 
 A selfcheck failure means the installed copy does not reproduce the built-in oracle — typically a corrupted or partial installation. Reinstall from a verified archive (`sha256sum -c MANIFEST.sha256` first); if the failure persists on a clean install, report it on the issue tracker with the printed check name and your Python/NumPy versions.
 
 ---
 
-## 10. Support and Version Information
+## 11. Support and Version Information
 
-### 10.1 Contact
+### 11.1 Contact
 
 - **Repository:** https://github.com/YanjinLyu/mixtriad
 - **Issue tracker:** https://github.com/YanjinLyu/mixtriad/issues
 - **Archived release:** https://doi.org/10.5281/zenodo.22029183
 
-### 10.2 Version
+### 11.2 Version
 
 - **Current version:** 1.1.2
 - **Released:** 2026-08-20
 - **License:** MIT
 
-### 10.3 Author
+### 11.3 Author
 
 | Name | Affiliation |
 |---|---|
 | Yanjin Lyu (maintainer, contact) | Hebei Education Press Co., Ltd.; Department of Music, University of Sheffield |
 
-### 10.4 Citation
+### 11.4 Citation
 
 If you use MixTriad in published work, please cite the accompanying SoftwareX article and the archived software release (DOI above). Machine-readable metadata is in `CITATION.cff`; GitHub's "Cite this repository" button renders it directly.
 
-### 10.5 Testing
+### 11.5 Testing
 
 ```bash
 python -m pytest tests -q       # 35 tests, incl. Hypothesis property tests
 mixtriad selfcheck --full       # built-in oracle, with a Stage-2 pass
 ```
 
-Continuous integration runs both on every commit across Python 3.9–3.13, verifies the integrity manifest, and executes the full demo pipeline end-to-end (§8.4).
+Continuous integration runs both on every commit across Python 3.9–3.13, verifies the integrity manifest, and executes the full demo pipeline end-to-end (§9.4).
 
 ---
 
-## 11. Appendix
+## 12. Appendix
 
 ### A. Complete Public API
 
@@ -692,6 +737,8 @@ mixtriad/
 │   ├── pipeline.py             # orchestration, figures, report
 │   ├── cli.py                  # mixtriad run / selfcheck
 │   └── selfcheck.py            # built-in oracle
+├── mixtriad_studio.html        # zero-install browser companion (Section 7)
+├── MixTriad_USER_MANUAL.md     # this manual
 ├── examples/                   # dataset generator, YAML config, demo output, real-data pilot
 ├── tests/                      # pytest suite (35 tests)
 ├── verify/                     # validation evidence, incl. the R QCA cross-check (round9)

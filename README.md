@@ -28,6 +28,16 @@ commands.
   tuning on the training fold only, metrics averaged over five fixed-seed 80/20
   hold-outs) so that reported RMSE/R² are honest out-of-sample numbers.
 
+## Zero-install browser version
+
+`mixtriad_studio.html` runs the Stage-1 regression and the complete Stage-3 fsQCA
+workflow in your browser — no Python, no installation, no network access (safe for
+confidential data). Download the file and double-click it. Its fsQCA engine is a
+line-for-line port of the package engine, differential-tested against it; the
+Stage-2 screen is simplified, so use the Python package for the analysis of record.
+Full documentation, including an API reference and troubleshooting, is in
+`MixTriad_USER_MANUAL.md`.
+
 ## Install
 
 ```bash
@@ -94,6 +104,8 @@ hand-coded ordinal antecedents (items × coders array, NaN = missing).
 mixtriad/            package (data, regression, boosting, fsqca, pipeline, cli)
 examples/            synthetic dataset generator + YAML config + demo output
 tests/               pytest suite (calibration, Quine–McCluskey, end-to-end)
+mixtriad_studio.html zero-install browser companion
+MixTriad_USER_MANUAL.md   user manual
 docs/                architecture figure source
 ```
 
