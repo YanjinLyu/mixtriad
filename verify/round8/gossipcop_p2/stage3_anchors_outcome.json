@@ -1,0 +1,34 @@
+{
+  "headline_length": {
+    "anchors": [
+      40.0,
+      68.0,
+      96.0
+    ],
+    "degenerate_percentiles": false
+  },
+  "exclamations": {
+    "anchors": [
+      -0.5,
+      0.5,
+      1.5
+    ],
+    "degenerate_percentiles": false
+  },
+  "caps_ratio": {
+    "anchors": [
+      -0.01,
+      0.02,
+      0.15
+    ],
+    "degenerate_percentiles": false
+  },
+  "clickbait_cues": {
+    "anchors": [
+      -0.5,
+      0.5,
+      1.5
+    ],
+    "degenerate_percentiles": false
+  }
+}

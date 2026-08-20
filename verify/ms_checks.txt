@@ -1,0 +1,48 @@
+{
+ "word_count_1to5": 1754,
+ "sections": {
+  "1. Motivation and significance": true,
+  "2. Software description": true,
+  "2.1 Software architecture": true,
+  "2.2 Software functionalities": true,
+  "3. Illustrative examples": true,
+  "4. Impact": true,
+  "5. Conclusions": true,
+  "Declaration of competing interest": true,
+  "References": true
+ },
+ "keywords": [
+  "fsQCA",
+  "mixed methods",
+  "gradient boosting",
+  "permutation importance",
+  "misinformation",
+  "Python"
+ ],
+ "n_refs": 14,
+ "metadata_fields": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "C7",
+  "C8",
+  "C9"
+ ],
+ "title_pattern": true,
+ "tables": [
+  "Table 1. Code metadata",
+  "Table 2. Out-of-sample",
+  "Table 3. Intermediate solution"
+ ],
+ "figs": [
+  "Fig. 1.",
+  "Fig. 2.",
+  "Fig. 3."
+ ],
+ "table2_matches_csv": true,
+ "table3_matches_csv": true,
+ "abstract_sentences": 3
+}

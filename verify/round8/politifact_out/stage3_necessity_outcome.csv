@@ -1,0 +1,11 @@
+condition,necessity_consistency,necessity_coverage
+is_fake,0.837,0.591
+~is_fake,0.379,0.58
+headline_length,0.596,0.588
+~headline_length,0.62,0.587
+word_count,0.618,0.589
+~word_count,0.598,0.585
+exclamations,0.696,0.639
+~exclamations,0.637,0.649
+clickbait_cues,0.712,0.634
+~clickbait_cues,0.61,0.644

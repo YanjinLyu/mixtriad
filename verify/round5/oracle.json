@@ -1,0 +1,12 @@
+{
+ "exhaustive_k3": 255,
+ "sampled_k4": 1500,
+ "sampled_k5": 300,
+ "cover_fail": 0,
+ "domain_fail": 0,
+ "prime_fail": 0,
+ "minimality_gaps": {
+  "0": 2055
+ },
+ "checked_min_cover": 2055
+}

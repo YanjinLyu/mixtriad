@@ -1,0 +1,4 @@
+core venv import OK 1.0.1 | xgb/optuna present: False False
+CLI entrypoint OK
+CLI module OK
+16 passed in 12.24s

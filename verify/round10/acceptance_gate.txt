@@ -1,0 +1,44 @@
+{
+ "tests": "35 passed in 15.68s",
+ "selfcheck_quick": "selfcheck PASSED in 0.08 s (quick mode)",
+ "selfcheck_full": "selfcheck PASSED in 1.89 s (full mode)",
+ "ruff": "All checks passed!",
+ "twine": "2/2 PASSED",
+ "versions": {
+  "pyproject": "1.1.1",
+  "__init__": "1.1.1",
+  "cff": "1.1.1",
+  "zenodo": "1.1.1",
+  "changelog_top": "1.1.1"
+ },
+ "versions_consistent": true,
+ "manifest": {
+  "recorded": 159,
+  "current": 170,
+  "hash_drift": [],
+  "missing": [],
+  "uncovered_new_files": 11,
+  "uncovered_sample": [
+   "verify/round9/crosscheck.R",
+   "verify/round9/crosscheck_final.json",
+   "verify/round9/crosscheck_part1.json",
+   "verify/round9/environment.txt",
+   "verify/round9/py_results.json"
+  ]
+ },
+ "evidence": {
+  "json_files": 16,
+  "all_parse": true,
+  "rounds_present": [
+   "round10",
+   "round2",
+   "round3",
+   "round4",
+   "round5",
+   "round6",
+   "round7",
+   "round8",
+   "round9"
+  ]
+ }
+}

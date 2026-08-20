@@ -1,0 +1,140 @@
+{
+ "calibration": {
+  "n": 63,
+  "max_abs_diff": 6.661338147750939e-16,
+  "crossover_diff": 1.1102230246251565e-16
+ },
+ "pof": {
+  "n_recipes": 4,
+  "max_diff": 0.00039199999999994795,
+  "pairs": [
+   {
+    "recipe": "{'creator_reach': 1, 'account_topic_focus': 1}",
+    "incl_r_py": [
+     0.913,
+     0.913392
+    ],
+    "pri_r_py": [
+     0.846,
+     0.845742
+    ],
+    "cov_r_py": [
+     0.496,
+     0.495888
+    ],
+    "max_diff": 0.00039199999999994795
+   },
+   {
+    "recipe": "{'creator_reach': 1, 'emotional_intensity': 1}",
+    "incl_r_py": [
+     0.877,
+     0.87726
+    ],
+    "pri_r_py": [
+     0.774,
+     0.774025
+    ],
+    "cov_r_py": [
+     0.481,
+     0.480613
+    ],
+    "max_diff": 0.0003869999999999707
+   },
+   {
+    "recipe": "{'creator_reach': 1}",
+    "incl_r_py": [
+     0.809,
+     0.809211
+    ],
+    "pri_r_py": [
+     0.705,
+     0.704969
+    ],
+    "cov_r_py": [
+     0.714,
+     0.713938
+    ],
+    "max_diff": 0.00021099999999996122
+   },
+   {
+    "recipe": "{'account_topic_focus': 0}",
+    "incl_r_py": [
+     0.501,
+     0.500741
+    ],
+    "pri_r_py": [
+     0.266,
+     0.265711
+    ],
+    "cov_r_py": [
+     0.509,
+     0.509013
+    ],
+    "max_diff": 0.0002890000000000392
+   }
+  ]
+ },
+ "truthtable": {
+  "rows_r": 16,
+  "rows_py": 16,
+  "rows_matched": 16,
+  "n_cases_all_equal": true,
+  "incl_max_diff": 0.00046835923109300737,
+  "pri_max_diff": 0.00043113106918490907,
+  "out_same_rule_agree": true,
+  "r_OUT_agree": true
+ },
+ "solutions": {
+  "conservative_match": true,
+  "parsimonious_match": true,
+  "solution_incl_cov_identical": [
+   0.908,
+   0.53
+  ],
+  "py_cons": [
+   "account_topic_focus * creator_reach * emotional_intensity",
+   "account_topic_focus * creator_reach * ~video_duration",
+   "creator_reach * emotional_intensity * ~video_duration"
+  ],
+  "r_cons_M1": [
+   [
+    "account_topic_focus * creator_reach * emotional_intensity",
+    "account_topic_focus * creator_reach * ~video_duration",
+    "creator_reach * emotional_intensity * ~video_duration"
+   ]
+  ]
+ },
+ "lipset": {
+  "truthtable": {
+   "rows_matched": 9,
+   "rows_r": 32,
+   "n_equal": true,
+   "incl_max_diff": 0.0004285714285710007,
+   "OUT_agree": true
+  },
+  "solutions": {
+   "conservative_match": true,
+   "parsimonious_match": true,
+   "py_cons": [
+    "DEV * IND * LIT * STB * URB",
+    "DEV * LIT * STB * ~IND * ~URB"
+   ],
+   "r_cons_models": [
+    [
+     "DEV * IND * LIT * STB * URB",
+     "DEV * LIT * STB * ~IND * ~URB"
+    ]
+   ],
+   "py_pars": [
+    "DEV * ~IND",
+    "STB * URB"
+   ],
+   "r_pars_models": [
+    [
+     "DEV * ~IND",
+     "STB * URB"
+    ]
+   ]
+  }
+ }
+}

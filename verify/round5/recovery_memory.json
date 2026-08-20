@@ -1,0 +1,95 @@
+{
+ "recovery_grid": [
+  {
+   "k": 3,
+   "n": 100,
+   "sigma": 0.05,
+   "recovery_rate": 0.95,
+   "mean_solution_consistency": 0.897
+  },
+  {
+   "k": 3,
+   "n": 100,
+   "sigma": 0.15,
+   "recovery_rate": 0.25,
+   "mean_solution_consistency": 0.222
+  },
+  {
+   "k": 3,
+   "n": 300,
+   "sigma": 0.05,
+   "recovery_rate": 1.0,
+   "mean_solution_consistency": 0.944
+  },
+  {
+   "k": 3,
+   "n": 300,
+   "sigma": 0.15,
+   "recovery_rate": 0.05,
+   "mean_solution_consistency": 0.044
+  },
+  {
+   "k": 4,
+   "n": 100,
+   "sigma": 0.05,
+   "recovery_rate": 0.9,
+   "mean_solution_consistency": 0.854
+  },
+  {
+   "k": 4,
+   "n": 100,
+   "sigma": 0.15,
+   "recovery_rate": 0.15,
+   "mean_solution_consistency": 0.136
+  },
+  {
+   "k": 4,
+   "n": 300,
+   "sigma": 0.05,
+   "recovery_rate": 1.0,
+   "mean_solution_consistency": 0.948
+  },
+  {
+   "k": 4,
+   "n": 300,
+   "sigma": 0.15,
+   "recovery_rate": 0.0,
+   "mean_solution_consistency": 0.0
+  },
+  {
+   "k": 5,
+   "n": 100,
+   "sigma": 0.05,
+   "recovery_rate": 0.9,
+   "mean_solution_consistency": 0.86
+  },
+  {
+   "k": 5,
+   "n": 100,
+   "sigma": 0.15,
+   "recovery_rate": 0.1,
+   "mean_solution_consistency": 0.092
+  },
+  {
+   "k": 5,
+   "n": 300,
+   "sigma": 0.05,
+   "recovery_rate": 0.95,
+   "mean_solution_consistency": 0.906
+  },
+  {
+   "k": 5,
+   "n": 300,
+   "sigma": 0.15,
+   "recovery_rate": 0.0,
+   "mean_solution_consistency": 0.0
+  }
+ ],
+ "large_n": {
+  "n": 50000,
+  "stage1_s": 1.21,
+  "stage3_s": 0.95,
+  "tt_rows": 64,
+  "peak_traced_MB": 102.9
+ }
+}

@@ -1,0 +1,8 @@
+model,term,estimate,std_error,p_value,sig
+Poisson QMLE robust-SE (outcome/1),const,7.439,0.3575,0.0,***
+Poisson QMLE robust-SE (outcome/1),headline_length,-0.0326,0.0179,0.068,
+Poisson QMLE robust-SE (outcome/1),word_count,0.0744,0.1026,0.4681,
+Poisson QMLE robust-SE (outcome/1),exclamations,0.1801,0.2704,0.5055,
+Poisson QMLE robust-SE (outcome/1),caps_ratio,-0.2804,0.877,0.7492,
+Poisson QMLE robust-SE (outcome/1),clickbait_cues,0.2811,0.4979,0.5724,
+Poisson QMLE robust-SE (outcome/1),is_fake,-0.2082,0.4099,0.6114,

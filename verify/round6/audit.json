@@ -1,0 +1,24 @@
+{
+ "json_parse": {
+  "verify/ms_evidence.json": "OK",
+  "verify/evidence.json": "OK",
+  "verify/round2/evidence.json": "OK",
+  "verify/round5/oracle.json": "OK",
+  "verify/round5/recovery_memory.json": "OK",
+  "verify/round3/determinism_perf.json": "OK",
+  "verify/round4/summary.json": "OK",
+  "verify/round6/mutation_final.json": "OK"
+ },
+ "versions": {
+  "pyproject": "1.0.3",
+  "__init__": "1.0.3",
+  "cff": "1.0.3",
+  "zenodo": "1.0.3"
+ },
+ "docx_xsd": {
+  "MixTriad_SoftwareX_Submission.docx": "PASSED",
+  "MixTriad_Highlights.docx": "PASSED"
+ },
+ "manuscript_version_refs": 3,
+ "audit_tool_note": "initial regex matched cff-version header; corrected to the release version field"
+}

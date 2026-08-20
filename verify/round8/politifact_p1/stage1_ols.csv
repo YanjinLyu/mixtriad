@@ -1,0 +1,7 @@
+model,term,estimate,std_error,p_value,sig
+OLS(log outcome),const,3.5692,0.1977,0.0,***
+OLS(log outcome),headline_length,-0.0134,0.0028,0.0,***
+OLS(log outcome),exclamations,-0.1191,0.2463,0.6287,
+OLS(log outcome),caps_ratio,0.2885,0.5091,0.5709,
+OLS(log outcome),clickbait_cues,0.1711,0.248,0.4903,
+OLS(log outcome),is_fake,1.4022,0.1739,0.0,***

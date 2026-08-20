@@ -1,0 +1,11 @@
+[politifact] n = 1056, zero-engagement share = 24.1%, max engagement = 29,060
+  count model: Poisson QMLE robust-SE (outcome/1)  (meta: {'nb_converged': False, 'outcome_rescale': 1.0, 'fallback': 'raw-scale count fits failed; outcome rescaled (slopes invariant, intercept shifted by -log scale)'})
+  retained conditions: ['is_fake', 'headline_length', 'word_count', 'exclamations', 'clickbait_cues']
+  truth table refused a sufficient solution (documented behaviour)
+VIF max: 15.32
+model panel:
+                      model  RMSE   MAE     R2
+    Random forest (default) 2.979 2.402 -0.176
+Gradient boosting (default) 2.848 2.369 -0.075
+   XGBoost (Bayesian-tuned) 2.726 2.305  0.015
+             OLS regression 2.705 2.295  0.030

@@ -1,0 +1,217 @@
+{
+ "truth_table": [
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 1,
+   "emotional_intensity": 1,
+   "video_duration": 0,
+   "n_cases": 22,
+   "raw_consistency": 0.967,
+   "PRI": 0.925,
+   "outcome": 1
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 1,
+   "emotional_intensity": 0,
+   "video_duration": 0,
+   "n_cases": 31,
+   "raw_consistency": 0.941,
+   "PRI": 0.855,
+   "outcome": 1
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 1,
+   "emotional_intensity": 1,
+   "video_duration": 1,
+   "n_cases": 22,
+   "raw_consistency": 0.94,
+   "PRI": 0.858,
+   "outcome": 1
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 0,
+   "emotional_intensity": 1,
+   "video_duration": 0,
+   "n_cases": 22,
+   "raw_consistency": 0.894,
+   "PRI": 0.702,
+   "outcome": 1
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 1,
+   "emotional_intensity": 0,
+   "video_duration": 1,
+   "n_cases": 18,
+   "raw_consistency": 0.881,
+   "PRI": 0.678,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 0,
+   "emotional_intensity": 0,
+   "video_duration": 0,
+   "n_cases": 28,
+   "raw_consistency": 0.876,
+   "PRI": 0.684,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 1,
+   "emotional_intensity": 1,
+   "video_duration": 0,
+   "n_cases": 25,
+   "raw_consistency": 0.858,
+   "PRI": 0.623,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 0,
+   "emotional_intensity": 1,
+   "video_duration": 1,
+   "n_cases": 27,
+   "raw_consistency": 0.851,
+   "PRI": 0.584,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 1,
+   "emotional_intensity": 0,
+   "video_duration": 0,
+   "n_cases": 19,
+   "raw_consistency": 0.809,
+   "PRI": 0.448,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 1,
+   "emotional_intensity": 1,
+   "video_duration": 1,
+   "n_cases": 29,
+   "raw_consistency": 0.795,
+   "PRI": 0.513,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 1,
+   "account_topic_focus": 0,
+   "emotional_intensity": 0,
+   "video_duration": 1,
+   "n_cases": 24,
+   "raw_consistency": 0.769,
+   "PRI": 0.38,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 1,
+   "emotional_intensity": 0,
+   "video_duration": 1,
+   "n_cases": 28,
+   "raw_consistency": 0.71,
+   "PRI": 0.281,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 0,
+   "emotional_intensity": 1,
+   "video_duration": 0,
+   "n_cases": 25,
+   "raw_consistency": 0.688,
+   "PRI": 0.215,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 0,
+   "emotional_intensity": 1,
+   "video_duration": 1,
+   "n_cases": 22,
+   "raw_consistency": 0.663,
+   "PRI": 0.181,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 0,
+   "emotional_intensity": 0,
+   "video_duration": 0,
+   "n_cases": 22,
+   "raw_consistency": 0.621,
+   "PRI": 0.107,
+   "outcome": 0
+  },
+  {
+   "creator_reach": 0,
+   "account_topic_focus": 0,
+   "emotional_intensity": 0,
+   "video_duration": 1,
+   "n_cases": 24,
+   "raw_consistency": 0.61,
+   "PRI": 0.075,
+   "outcome": 0
+  }
+ ],
+ "solutions": {
+  "conservative": [
+   "creator_reach * account_topic_focus * emotional_intensity",
+   "creator_reach * account_topic_focus * ~video_duration",
+   "creator_reach * emotional_intensity * ~video_duration"
+  ],
+  "parsimonious": [
+   "creator_reach * account_topic_focus * emotional_intensity",
+   "creator_reach * account_topic_focus * ~video_duration",
+   "creator_reach * emotional_intensity * ~video_duration"
+  ],
+  "intermediate": [
+   "creator_reach * account_topic_focus * emotional_intensity",
+   "creator_reach * account_topic_focus * ~video_duration",
+   "creator_reach * emotional_intensity * ~video_duration"
+  ]
+ },
+ "pof": [
+  {
+   "recipe": {
+    "creator_reach": 1,
+    "account_topic_focus": 1
+   },
+   "incl": 0.913392,
+   "cov": 0.495888,
+   "pri": 0.845742
+  },
+  {
+   "recipe": {
+    "creator_reach": 1,
+    "emotional_intensity": 1
+   },
+   "incl": 0.87726,
+   "cov": 0.480613,
+   "pri": 0.774025
+  },
+  {
+   "recipe": {
+    "creator_reach": 1
+   },
+   "incl": 0.809211,
+   "cov": 0.713938,
+   "pri": 0.704969
+  },
+  {
+   "recipe": {
+    "account_topic_focus": 0
+   },
+   "incl": 0.500741,
+   "cov": 0.509013,
+   "pri": 0.265711
+  }
+ ]
+}

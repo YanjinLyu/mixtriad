@@ -1,0 +1,6 @@
+model,term,estimate,std_error,p_value,sig
+"NegBin(raw outcome, alpha=1.96)",const,6.1808,0.0883,0.0,***
+"NegBin(raw outcome, alpha=1.96)",headline_length,-0.0234,0.0012,0.0,***
+"NegBin(raw outcome, alpha=1.96)",exclamations,-0.2992,0.0589,0.0,***
+"NegBin(raw outcome, alpha=1.96)",caps_ratio,-0.9858,0.5616,0.0792,
+"NegBin(raw outcome, alpha=1.96)",clickbait_cues,-0.004,0.113,0.9721,

@@ -1,0 +1,7 @@
+feature,permutation_importance,role
+is_fake,0.1918,antecedent
+headline_length,0.0994,antecedent
+word_count,0.0118,antecedent
+exclamations,0.0095,antecedent
+clickbait_cues,0.0064,antecedent
+caps_ratio,-0.0249,antecedent

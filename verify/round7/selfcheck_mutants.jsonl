@@ -1,0 +1,17 @@
+{"id": "selfcheck:0", "module": "selfcheck.py", "site": ["bool", 82, 18], "killed": false}
+{"id": "selfcheck:1", "module": "selfcheck.py", "site": ["bool", 125, 9], "killed": false}
+{"id": "selfcheck:2", "module": "selfcheck.py", "site": ["cmp", 76, 53], "killed": true}
+{"id": "selfcheck:3", "module": "selfcheck.py", "site": ["cmp", 83, 22], "killed": false}
+{"id": "selfcheck:4", "module": "selfcheck.py", "site": ["bool", 131, 13], "killed": false}
+{"id": "selfcheck:5", "module": "selfcheck.py", "site": ["bin", 83, 42], "killed": true}
+{"id": "selfcheck:6", "module": "selfcheck.py", "site": ["bin", 82, 22], "killed": true}
+{"id": "selfcheck:7", "module": "selfcheck.py", "site": ["cmp", 87, 20], "killed": true}
+{"id": "selfcheck:8", "module": "selfcheck.py", "site": ["cmp", 70, 22], "killed": true}
+{"id": "selfcheck:9", "module": "selfcheck.py", "site": ["cmp", 125, 20], "killed": true}
+{"id": "selfcheck:rerun0", "module": "selfcheck.py", "site": ["bool", 82, 18], "killed": true}
+{"id": "selfcheck:rerun1", "module": "selfcheck.py", "site": ["bool", 125, 9], "killed": false}
+{"id": "selfcheck:rerun2", "module": "selfcheck.py", "site": ["cmp", 83, 22], "killed": false}
+{"id": "selfcheck:rerun3", "module": "selfcheck.py", "site": ["bool", 131, 13], "killed": false}
+{"id": "selfcheck:rerun2-0", "module": "selfcheck.py", "site": ["bool", 125, 9], "killed": true}
+{"id": "selfcheck:rerun2-1", "module": "selfcheck.py", "site": ["cmp", 83, 22], "killed": false}
+{"id": "selfcheck:rerun2-2", "module": "selfcheck.py", "site": ["bool", 131, 13], "killed": true}

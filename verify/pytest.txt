@@ -1,0 +1,12 @@
+collecting ... collected 8 items
+
+tests/test_fsqca.py::test_calibration_anchors PASSED                     [ 12%]
+tests/test_fsqca.py::test_consistency_bounds PASSED                      [ 25%]
+tests/test_fsqca.py::test_quine_mccluskey_textbook PASSED                [ 37%]
+tests/test_fsqca.py::test_qm_with_remainders_simplifies PASSED           [ 50%]
+tests/test_fsqca.py::test_pipeline_recovers_planted_configuration PASSED [ 62%]
+tests/test_fsqca.py::test_krippendorff_perfect_agreement PASSED          [ 75%]
+tests/test_fsqca.py::test_krippendorff_reasonable_range PASSED           [ 87%]
+tests/test_pipeline.py::test_end_to_end_smoke PASSED                     [100%]
+
+============================== 8 passed in 10.98s ==============================

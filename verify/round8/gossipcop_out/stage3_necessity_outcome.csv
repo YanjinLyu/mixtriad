@@ -1,0 +1,9 @@
+condition,necessity_consistency,necessity_coverage
+headline_length,0.599,0.561
+~headline_length,0.669,0.66
+exclamations,0.761,0.628
+~exclamations,0.625,0.72
+caps_ratio,0.738,0.695
+~caps_ratio,0.72,0.708
+clickbait_cues,0.742,0.679
+~clickbait_cues,0.697,0.705

@@ -1,0 +1,11 @@
+selfcheck:0 SURVIVED ('bool', 82, 18)
+selfcheck:1 SURVIVED ('bool', 125, 9)
+selfcheck:2 KILLED ('cmp', 76, 53)
+selfcheck:3 SURVIVED ('cmp', 83, 22)
+selfcheck:4 SURVIVED ('bool', 131, 13)
+selfcheck:5 KILLED ('bin', 83, 42)
+selfcheck:6 KILLED ('bin', 82, 22)
+selfcheck:7 KILLED ('cmp', 87, 20)
+selfcheck:8 KILLED ('cmp', 70, 22)
+selfcheck:9 KILLED ('cmp', 125, 20)
+spot-check kill: 6/10

@@ -1,0 +1,51 @@
+{
+ "zenodo_json_valid": true,
+ "zenodo_creator": "Lu, Yang",
+ "zenodo_license": "MIT",
+ "zenodo_version": "1.0.0",
+ "cff_valid": true,
+ "cff_author": "Lu, Yang",
+ "cff_repo": "https://github.com/USERNAME/mixtriad",
+ "cff_version": "1.0.0",
+ "checklist_steps": 4,
+ "pyproject_author": true,
+ "readme_citation": true,
+ "author_in_ms": true,
+ "corresponding_footnote": true,
+ "credit_statement": true,
+ "n_fill_fields": 4,
+ "c9_s8_wired": true,
+ "required_metadata_heading": true,
+ "table2_software_meta": true,
+ "declarations": {
+  "CRediT authorship contribution statement": true,
+  "Declaration of generative AI": true,
+  "Declaration of competing interest": true,
+  "Data availability": true,
+  "Acknowledgements": true
+ },
+ "wordcount_official": 1915,
+ "abstract_sentences": 4,
+ "n_figures": 3,
+ "c2_github_format": true,
+ "username_tokens_ms": 1,
+ "highlights_n": 5,
+ "highlights_maxlen": 83,
+ "highlights_lens": [
+  76,
+  83,
+  83,
+  80,
+  83
+ ],
+ "author_consistent": true,
+ "xsd_Soft": true,
+ "xsd_High": true,
+ "zip_has": {
+  ".zenodo.json": true,
+  "CITATION.cff": true,
+  "RELEASE_CHECKLIST.md": true
+ },
+ "zip_no_build_artifacts": true,
+ "xsd_fix_note": "non-schema w:highlightCs stripped; w:highlight retained"
+}

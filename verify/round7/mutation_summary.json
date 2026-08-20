@@ -1,0 +1,8 @@
+{
+ "spot_mutants": 10,
+ "killed_final": 9,
+ "survivor": "cmp@83 (>0.5 vs >=0.5)",
+ "classification": "equivalent under the D9 invariant (memberships never equal 0.5)",
+ "negative_tests_added": 4,
+ "suite_size": 34
+}

@@ -1,0 +1,26 @@
+== CONSERVATIVE ==
+
+M1: creator_reach*account_topic_focus*emotional_intensity +
+    creator_reach*account_topic_focus*~video_duration +
+    creator_reach*emotional_intensity*~video_duration -> Y
+
+                                                          inclS   PRI   covS   covU  
+------------------------------------------------------------------------------------ 
+1  creator_reach*account_topic_focus*emotional_intensity  0.945  0.889  0.363  0.070 
+2      creator_reach*account_topic_focus*~video_duration  0.951  0.901  0.388  0.095 
+3      creator_reach*emotional_intensity*~video_duration  0.918  0.828  0.365  0.072 
+------------------------------------------------------------------------------------ 
+                                                      M1  0.908  0.830  0.530 
+== PARSIMONIOUS ==
+
+M1: creator_reach*account_topic_focus*emotional_intensity +
+    creator_reach*account_topic_focus*~video_duration +
+    creator_reach*emotional_intensity*~video_duration -> Y
+
+                                                          inclS   PRI   covS   covU  
+------------------------------------------------------------------------------------ 
+1  creator_reach*account_topic_focus*emotional_intensity  0.945  0.889  0.363  0.070 
+2      creator_reach*account_topic_focus*~video_duration  0.951  0.901  0.388  0.095 
+3      creator_reach*emotional_intensity*~video_duration  0.918  0.828  0.365  0.072 
+------------------------------------------------------------------------------------ 
+                                                      M1  0.908  0.830  0.530 

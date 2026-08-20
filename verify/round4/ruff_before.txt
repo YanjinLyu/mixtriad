@@ -1,0 +1,15 @@
+11 |   def _schema(**kw):
+12 |       base = dict(outcome="engagement",
+   |  ____________^
+13 | |                 antecedents=["creator_reach", "account_topic_focus",
+14 | |                              "emotional_intensity"],
+15 | |                 controls=["publication_age"],
+16 | |                 log_transform=["creator_reach"])
+   | |________________________________________________^
+17 |       base.update(kw)
+18 |       return Schema(**base)
+   |
+help: Rewrite as a literal
+
+Found 95 errors.
+[*] 16 fixable with the `--fix` option (60 hidden fixes can be enabled with the `--unsafe-fixes` option).

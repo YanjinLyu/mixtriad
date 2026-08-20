@@ -1,0 +1,41 @@
+{
+ "total_mutants": 37,
+ "killed_initial": 16,
+ "killed_final": 26,
+ "score_initial": 0.432,
+ "score_final": 0.703,
+ "survivors_final": [
+  "fsqca.py:1",
+  "fsqca.py:9",
+  "fsqca.py:10",
+  "fsqca.py:12",
+  "fsqca.py:16",
+  "fsqca.py:20",
+  "regression.py:1",
+  "regression.py:2",
+  "regression.py:3",
+  "regression.py:4",
+  "regression.py:5"
+ ],
+ "classified": {
+  "equivalent": [
+   "fsqca.py:9",
+   "fsqca.py:10",
+   "fsqca.py:16",
+   "regression.py:2",
+   "regression.py:4",
+   "regression.py:5",
+   "fsqca.py:12",
+   "fsqca.py:20"
+  ],
+  "policy_boundary": [
+   "fsqca.py:1"
+  ],
+  "absorbed_by_fallback": [
+   "regression.py:1",
+   "regression.py:3"
+  ]
+ },
+ "unclassified_gaps": [],
+ "effective_score_nonequivalent": "26/26"
+}

@@ -1,0 +1,43 @@
+{
+ "calib_anchor_values": [
+  0.05,
+  0.501,
+  0.95
+ ],
+ "consistency_manual_match": true,
+ "stage3_deterministic": true,
+ "fallback_ok": true,
+ "fallback_model_names": [
+  "Random forest (default)",
+  "HistGB (random-search-tuned)",
+  "Gradient boosting (default)",
+  "OLS regression"
+ ],
+ "rmse_reduction_pct": 17.9,
+ "ols_r2_test": 0.701,
+ "xgb_r2_test": 0.799,
+ "n_recipes_high": 3,
+ "core_recipe_present": true,
+ "low_mirror": [
+  "~creator_reach * ~account_topic_focus"
+ ],
+ "vif_max": 1.62,
+ "retained": [
+  "creator_reach",
+  "account_topic_focus",
+  "emotional_intensity",
+  "video_duration"
+ ],
+ "n_artifacts": 24,
+ "sol_cons_cov": [
+  "0.908",
+  "0.530"
+ ],
+ "ols_r2_full": "0.757",
+ "anchors_archived": [
+  "account_topic_focus",
+  "creator_reach",
+  "emotional_intensity",
+  "video_duration"
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "stage2_metrics_identical": true,
+ "stage2_importance_identical": true,
+ "stage2_retained_identical": true,
+ "perf": [
+  {
+   "n": 388,
+   "stage1_s": 0.04,
+   "stage3_s": 0.01,
+   "tt_rows": 16
+  },
+  {
+   "n": 2000,
+   "stage1_s": 0.1,
+   "stage3_s": 0.02,
+   "tt_rows": 16
+  },
+  {
+   "n": 5000,
+   "stage1_s": 0.08,
+   "stage3_s": 0.01,
+   "tt_rows": 16
+  }
+ ],
+ "stage2_n2000_1seed_8trials_s": 14.9
+}

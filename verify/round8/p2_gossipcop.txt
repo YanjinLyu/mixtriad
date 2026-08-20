@@ -1,0 +1,3 @@
+P2 真值表 13 行 (初版 2 行); 最高一致性 0.878; 充分行 0 个
+中间解条数: 0 | 空解 CSV 现在可解析: 是, 列 = ['recipe', 'consistency', 'raw_coverage', 'unique_coverage']
+退化诊断示例(headline vs cues): False / False

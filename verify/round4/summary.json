@@ -1,0 +1,9 @@
+{"A_packaging": {"sdist_wheel_build": "OK", "twine_check": "2/2 PASSED", "wheel_files": 13, "cli_present": true, "no_test_example_leak": true, "install_from_wheel_clean_venv": "OK"},
+ "B_min_matrix": {"initial_pins_broke": "statsmodels 0.14.1 x scipy 1.17 (_lazywhere ImportError)", "lowest_working_statsmodels": "0.14.5", "final_matrix": "numpy 1.26.4 / pandas 2.1.4 / sklearn 1.3.2 / statsmodels 0.14.5 / scipy 1.17.1 / mpl 3.8.4", "suite": "16 passed (13 deprecation warnings, non-blocking)", "remediation": "pyproject floor statsmodels>=0.14.5 (D7)"},
+ "B_new_matrix": {"env": "numpy 2.4.4 / pandas 3.0.2 / sklearn 1.8.0 / statsmodels 0.14.6", "suite": "16 passed"},
+ "C_core_only": {"xgb_optuna": false, "cli_entrypoint": "OK", "suite": "16 passed in 12.24s"},
+ "D_lint": {"raw_findings_extended_rules": 95, "auto_fixed": 16, "adopted_ruleset": "E,F,W (line-length 100, E501 ignored w/ rationale)", "dead_code_removed": ["n_pairable", "neg", "ambiguous l"], "final": "0 errors"},
+ "E_coverage": {"statements": 568, "missed": 73, "total": "87%"},
+ "F_supply_chain": {"tool": "pip-audit", "packages": 9, "result": "No known vulnerabilities found"},
+ "G_readme_consistency": {"api_block": "executed end-to-end (n_trials 50->6 for time; code path identical)", "runtime_s": 47.5, "outputs": ["outcome", "negated"]},
+ "version": "1.0.2", "final_suite": "16 passed"}

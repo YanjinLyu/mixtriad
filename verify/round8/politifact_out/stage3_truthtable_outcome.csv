@@ -1,0 +1,5 @@
+is_fake,headline_length,word_count,exclamations,clickbait_cues,n_cases,raw_consistency,PRI,outcome
+1,0,1,1,1,89,0.741,0.479,0
+1,1,0,1,1,28,0.739,0.459,0
+1,1,1,1,1,505,0.693,0.472,0
+1,0,0,1,1,434,0.665,0.47,0
