@@ -1,0 +1,9 @@
+{
+  "title": "MixTriad: three-stage mixed-methods triangulation (regression, gradient boosting, fsQCA)",
+  "description": "Reproducible Python pipeline chaining parametric regression, Bayesian-optimized gradient boosting with a leakage-safe repeated hold-out protocol, and a complete fuzzy-set QCA engine (direct calibration, necessity analysis, truth table, Quine-McCluskey minimization). Developed alongside a study of the virality of AI-generated misinformation short videos; domain-agnostic by design.",
+  "creators": [{"name": "Lyu, Yanjin", "affiliation": "Hebei Education Press Co., Ltd.; Department of Music, University of Sheffield"}],
+  "license": "MIT",
+  "upload_type": "software",
+  "keywords": ["fsQCA", "mixed methods", "gradient boosting", "permutation importance", "misinformation", "Python"],
+  "version": "1.1.2"
+}
