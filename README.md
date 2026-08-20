@@ -1,5 +1,8 @@
 # MixTriad
 
+[![CI](https://github.com/YanjinLyu/mixtriad/actions/workflows/ci.yml/badge.svg)](https://github.com/YanjinLyu/mixtriad/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22029183.svg)](https://doi.org/10.5281/zenodo.22029183)
+
 **Three-stage mixed-methods triangulation for observational social-media research:
 parametric regression → Bayesian-optimised gradient boosting → fuzzy-set QCA (fsQCA), in one reproducible Python pipeline.**
 
@@ -104,7 +107,7 @@ python -m pytest tests -q
 
 If you use MixTriad, please cite the accompanying SoftwareX article and this repository:
 
-> Y. Lyu, MixTriad: A Python toolkit for triangulating regression, gradient-boosting, and fuzzy-set QCA evidence in observational social-media research, SoftwareX (under review). Repository: https://github.com/YanjinLyu/mixtriad (see `CITATION.cff`; a Zenodo DOI is minted per `RELEASE_CHECKLIST.md`).
+> Y. Lyu, MixTriad: A Python toolkit for triangulating regression, gradient-boosting, and fuzzy-set QCA evidence in observational social-media research, SoftwareX (under review). Repository: https://github.com/YanjinLyu/mixtriad. Archived version: <https://doi.org/10.5281/zenodo.22029183> (see `CITATION.cff`).
 
 ## License
 

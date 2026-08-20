@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "MixTriad: three-stage mixed-methods triangulation (regression, gradient boosting, fsQCA)"
 version: 1.1.2
+doi: 10.5281/zenodo.22029183
 date-released: 2026-08-20
 license: MIT
 repository-code: "https://github.com/YanjinLyu/mixtriad"
