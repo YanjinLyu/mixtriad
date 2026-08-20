@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.1.2 (2026-08-20)
+Metadata and packaging fixes; no runtime change.
+- Author metadata corrected in pyproject.toml, CITATION.cff, .zenodo.json,
+  LICENSE, and the README citation (name, e-mail, affiliation).
+- Release archive cleaned: development artefacts are no longer shipped
+  (.coverage, .ruff_cache/, build/ containing stale v1.0.0 sources,
+  mixtriad.egg-info/, and the duplicate out/ directory).
+- MANIFEST.sha256 regenerated last, over the cleaned tree, so
+  `sha256sum -c MANIFEST.sha256` now passes with zero failures (resolves the
+  round-10 acceptance-gate self-reference).
+
 ## v1.1.1 (2026-08-04)
 Real-world public-data pilot (FakeNewsNet, round 8) drove three fixes:
 - D10: empty fsQCA solutions now serialise with column headers instead of an

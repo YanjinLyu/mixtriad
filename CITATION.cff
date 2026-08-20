@@ -1,10 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "MixTriad: three-stage mixed-methods triangulation (regression, gradient boosting, fsQCA)"
-version: 1.1.1
-date-released: 2026-08-03
+version: 1.1.2
+date-released: 2026-08-20
 license: MIT
-repository-code: "https://github.com/USERNAME/mixtriad"
+repository-code: "https://github.com/YanjinLyu/mixtriad"
 authors:
-  - family-names: "Lu"
-    given-names: "Yang"
+  - family-names: "Lyu"
+    given-names: "Yanjin"
+    email: "lv.yan.jin.2009@163.com"
+    affiliation: "Hebei Education Press Co., Ltd.; Department of Music, University of Sheffield"

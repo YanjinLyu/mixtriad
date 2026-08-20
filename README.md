@@ -104,7 +104,7 @@ python -m pytest tests -q
 
 If you use MixTriad, please cite the accompanying SoftwareX article and this repository:
 
-> Y. Lu, MixTriad: A Python toolkit for triangulating regression, gradient-boosting, and fuzzy-set QCA evidence in observational social-media research, SoftwareX (under review). Repository: https://github.com/USERNAME/mixtriad (see `CITATION.cff`; a Zenodo DOI is minted per `RELEASE_CHECKLIST.md`).
+> Y. Lyu, MixTriad: A Python toolkit for triangulating regression, gradient-boosting, and fuzzy-set QCA evidence in observational social-media research, SoftwareX (under review). Repository: https://github.com/YanjinLyu/mixtriad (see `CITATION.cff`; a Zenodo DOI is minted per `RELEASE_CHECKLIST.md`).
 
 ## License
 
