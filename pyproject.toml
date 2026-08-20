@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mixtriad"
+version = "1.1.1"
+description = "Three-stage mixed-methods triangulation: regression, tuned gradient boosting, and fuzzy-set QCA for observational social-media research"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Yang Lu"}]
+dependencies = ["numpy>=1.23", "pandas>=1.5", "scikit-learn>=1.2", "matplotlib>=3.6", "statsmodels>=0.14.5", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+boost = ["xgboost>=1.7"]
+tune  = ["optuna>=3.0"]
+shap  = ["shap>=0.42"]
+all   = ["xgboost>=1.7", "optuna>=3.0", "shap>=0.42"]
+
+[project.scripts]
+mixtriad = "mixtriad.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mixtriad*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]  # long lines in tables/strings are intentional and reviewed
