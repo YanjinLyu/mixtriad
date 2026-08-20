@@ -1,0 +1,4 @@
+recipe,consistency,raw_coverage,unique_coverage
+creator_reach * account_topic_focus * ~video_duration,0.951,0.388,0.1
+creator_reach * account_topic_focus * emotional_intensity,0.945,0.363,0.072
+creator_reach * emotional_intensity * ~video_duration,0.918,0.365,0.082

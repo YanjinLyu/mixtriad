@@ -1,0 +1,43 @@
+# MixTriad demo configuration: virality of AI-generated misinformation videos
+data: examples/misinfo_videos_synthetic.csv
+outcome: engagement
+antecedents:
+  - creator_reach
+  - creator_activity
+  - audience_youthfulness
+  - topic_category
+  - video_duration
+  - headline_length
+  - hashtag_count
+  - emotional_intensity
+  - visual_realism
+  - av_coherence
+  - account_topic_focus
+controls:
+  - publication_age
+log_transform: [creator_reach, creator_activity]
+categorical: [topic_category]
+dimensions:
+  creator_reach: actor
+  creator_activity: actor
+  audience_youthfulness: actor
+  topic_category: content
+  video_duration: content
+  headline_length: content
+  hashtag_count: content
+  emotional_intensity: content
+  visual_realism: technology
+  av_coherence: technology
+  account_topic_focus: environment
+fsqca:
+  consistency_cutoff: 0.80
+  pri_cutoff: 0.70
+  frequency_cutoff: 2
+  directional:            # theory-driven expectations for the intermediate solution
+    creator_reach: 1
+    account_topic_focus: 1
+    emotional_intensity: 1
+    visual_realism: 1
+    av_coherence: 1
+n_trials: 15
+outdir: examples/demo_out

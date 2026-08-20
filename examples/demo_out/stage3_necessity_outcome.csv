@@ -1,0 +1,9 @@
+condition,necessity_consistency,necessity_coverage
+creator_reach,0.714,0.809
+~creator_reach,0.557,0.486
+account_topic_focus,0.724,0.714
+~account_topic_focus,0.509,0.501
+emotional_intensity,0.674,0.653
+~emotional_intensity,0.572,0.573
+video_duration,0.55,0.563
+~video_duration,0.682,0.648

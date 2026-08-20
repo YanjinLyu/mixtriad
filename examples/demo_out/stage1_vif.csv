@@ -1,0 +1,15 @@
+variable,VIF
+log_creator_reach,1.02
+log_creator_activity,1.03
+audience_youthfulness,1.03
+video_duration,1.03
+headline_length,1.03
+hashtag_count,1.03
+emotional_intensity,1.03
+visual_realism,1.61
+av_coherence,1.62
+account_topic_focus,1.05
+publication_age,1.02
+topic_category_2,1.48
+topic_category_3,1.46
+topic_category_4,1.36

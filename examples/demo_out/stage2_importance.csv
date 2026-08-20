@@ -1,0 +1,13 @@
+feature,permutation_importance,role
+creator_reach,1.1976,antecedent
+account_topic_focus,0.672,antecedent
+emotional_intensity,0.1956,antecedent
+video_duration,0.1877,antecedent
+visual_realism,0.095,antecedent
+publication_age,0.0791,control
+av_coherence,0.057,antecedent
+creator_activity,0.0185,antecedent
+topic_category,0.0106,antecedent
+hashtag_count,0.0008,antecedent
+headline_length,-0.002,antecedent
+audience_youthfulness,-0.0026,antecedent

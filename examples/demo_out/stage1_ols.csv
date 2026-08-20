@@ -1,0 +1,16 @@
+model,term,estimate,std_error,p_value,sig
+OLS(log outcome),const,-7.6809,0.6883,0.0,***
+OLS(log outcome),log_creator_reach,0.77,0.0421,0.0,***
+OLS(log outcome),log_creator_activity,0.0615,0.0589,0.2964,
+OLS(log outcome),audience_youthfulness,0.1503,0.4466,0.7364,
+OLS(log outcome),video_duration,-0.0146,0.002,0.0,***
+OLS(log outcome),headline_length,-0.0016,0.0024,0.5003,
+OLS(log outcome),hashtag_count,-0.0027,0.0239,0.9111,
+OLS(log outcome),emotional_intensity,0.3667,0.0422,0.0,***
+OLS(log outcome),visual_realism,0.2284,0.0491,0.0,***
+OLS(log outcome),av_coherence,0.171,0.0577,0.003,**
+OLS(log outcome),account_topic_focus,4.194,0.2475,0.0,***
+OLS(log outcome),publication_age,0.008,0.0017,0.0,***
+OLS(log outcome),topic_category_2,-0.3083,0.1433,0.0315,*
+OLS(log outcome),topic_category_3,0.1189,0.151,0.4311,
+OLS(log outcome),topic_category_4,-0.0103,0.1787,0.9542,

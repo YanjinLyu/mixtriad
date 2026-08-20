@@ -1,0 +1,5 @@
+model,RMSE,MAE,R2
+OLS regression,1.13,0.899,0.701
+Random forest (default),1.061,0.828,0.738
+Gradient boosting (default),1.012,0.784,0.761
+XGBoost (Bayesian-tuned),0.928,0.741,0.799

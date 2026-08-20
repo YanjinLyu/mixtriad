@@ -1,0 +1,10 @@
+configuration,condition,state,role
+C1,creator_reach,present,core
+C1,account_topic_focus,present,core
+C1,video_duration,absent,core
+C2,creator_reach,present,core
+C2,account_topic_focus,present,core
+C2,emotional_intensity,present,core
+C3,creator_reach,present,core
+C3,emotional_intensity,present,core
+C3,video_duration,absent,core

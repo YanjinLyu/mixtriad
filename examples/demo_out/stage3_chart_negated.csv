@@ -1,0 +1,3 @@
+configuration,condition,state,role
+C1,creator_reach,absent,core
+C1,account_topic_focus,absent,core
