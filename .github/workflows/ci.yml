@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # 完整路径:xgboost + optuna(README 推荐的安装方式)
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install (with boost + tune extras)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[boost,tune]"
+          pip install pytest hypothesis ruff
+      - name: Lint (ruff)
+        run: ruff check mixtriad tests examples
+      - name: Test suite
+        run: python -m pytest tests -q
+      - name: Installation selfcheck (full)
+        run: mixtriad selfcheck --full
+      - name: Release-integrity manifest
+        run: sha256sum -c MANIFEST.sha256 --quiet
+
+  # 降级路径:不装 xgboost/optuna,验证 README 承诺的
+  # HistGradientBoosting + 随机搜索 fallback 依然全绿
+  core-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install (core dependencies only)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest hypothesis
+      - name: Test suite (fallback path)
+        run: python -m pytest tests -q
+      - name: Installation selfcheck
+        run: mixtriad selfcheck
