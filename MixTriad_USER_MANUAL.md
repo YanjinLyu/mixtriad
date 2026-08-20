@@ -488,7 +488,7 @@ Report α per hand-coded antecedent before analysis; values ≥ 0.80 are convent
 
 ### 7.1 Opening the Tool
 
-No installation. Download `mixtriad_studio.html` from the repository root and double-click it, or open it from the browser's File menu. The page is a single self-contained file (~90 KB) with no external resources; it can be opened with the network disabled.
+No installation. Use the hosted copy at <https://yanjinlyu.github.io/mixtriad/mixtriad_studio.html> — the page is served by GitHub Pages but every computation still runs inside your own browser, and nothing is uploaded — or download `mixtriad_studio.html` from the repository root and double-click it. The page is a single self-contained file (~90 KB) with no external resources; it can be opened with the network disabled.
 
 ### 7.2 The Five Tabs
 

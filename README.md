@@ -32,7 +32,10 @@ commands.
 
 `mixtriad_studio.html` runs the Stage-1 regression and the complete Stage-3 fsQCA
 workflow in your browser — no Python, no installation, no network access (safe for
-confidential data). Download the file and double-click it. Its fsQCA engine is a
+confidential data). Use it directly at
+<https://yanjinlyu.github.io/mixtriad/mixtriad_studio.html>
+(the analysis still runs entirely in your own browser; nothing is uploaded), or
+download the file and double-click it. Its fsQCA engine is a
 line-for-line port of the package engine, differential-tested against it; the
 Stage-2 screen is simplified, so use the Python package for the analysis of record.
 Full documentation, including an API reference and troubleshooting, is in
