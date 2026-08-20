@@ -28,7 +28,7 @@ commands.
 ## Install
 
 ```bash
-pip install -e .            # core (numpy, pandas, scikit-learn, statsmodels, matplotlib, pyyaml)
+pip install -e .            # core (numpy, pandas, scikit-learn, statsmodels, matplotlib, pyyaml, tabulate)
 pip install -e ".[all]"     # + xgboost, optuna, shap (recommended)
 ```
 
