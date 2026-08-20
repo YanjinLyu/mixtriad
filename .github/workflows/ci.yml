@@ -107,3 +107,17 @@ jobs:
           name: demo-artefacts
           path: demo_out/
           retention-days: 14
+
+  studio:
+    name: Browser tool smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install jsdom
+        run: npm install jsdom --no-save
+      - name: Headless walk-through of mixtriad_studio.html on the demo corpus
+        run: node tests/studio_smoke.js
